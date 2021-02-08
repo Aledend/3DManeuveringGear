@@ -14870,7 +14870,8 @@ GameObject:
   - component: {fileID: 4400254854011605158}
   - component: {fileID: 7255801224680946481}
   - component: {fileID: 3036173322620057551}
-  - component: {fileID: 729024150601315658}
+  - component: {fileID: 8032418604261081053}
+  - component: {fileID: 4028734440292216027}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -14964,7 +14965,7 @@ MonoBehaviour:
   m_GasParticleDown: {fileID: 5758012944194547814}
   m_PlayerCamera: {fileID: 1024541404864419502}
   m_GasForce: 100
---- !u!114 &729024150601315658
+--- !u!114 &8032418604261081053
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14978,15 +14979,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerCamera: {fileID: 1024541404864419502}
   m_Rigidbody: {fileID: 5481054609560904775}
-  m_LeftGrappleHookNozzle: {fileID: 2585078961624861446}
-  m_RightGrappleHookNozzle: {fileID: 3824203228679665140}
+  m_GrappleHookNozzle: {fileID: 2585078961624861446}
   m_TraceMode: 1
-  m_LeftReticle: {fileID: 0}
-  m_RightReticle: {fileID: 0}
+  m_Reticle: {fileID: 0}
   m_TraceMask:
     serializedVersion: 2
     m_Bits: 55
-  m_PlayerInput: {fileID: 11400000, guid: 9a24d7d27fb5ce14381a943ffee0e564, type: 2}
+  m_GrapplingForce: 5
+  m_GrapplingKey: 323
+  m_ViewPortTracePoint: {x: 0.4, y: 0.65, z: 0}
+  m_GrapplingHookPrefab: {fileID: 3989919348148063227, guid: 0bb02b8f80e917f4e978eb1c12e053f0, type: 3}
+--- !u!114 &4028734440292216027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2531602788844992076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a29942a51e381944f89084706c45ba2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayerCamera: {fileID: 1024541404864419502}
+  m_Rigidbody: {fileID: 5481054609560904775}
+  m_GrappleHookNozzle: {fileID: 3824203228679665140}
+  m_TraceMode: 1
+  m_Reticle: {fileID: 0}
+  m_TraceMask:
+    serializedVersion: 2
+    m_Bits: 55
+  m_GrapplingForce: 5
+  m_GrapplingKey: 324
+  m_ViewPortTracePoint: {x: 0.6, y: 0.65, z: 0}
   m_GrapplingHookPrefab: {fileID: 3989919348148063227, guid: 0bb02b8f80e917f4e978eb1c12e053f0, type: 3}
 --- !u!1 &2531602789316134114
 GameObject:

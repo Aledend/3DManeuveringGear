@@ -42,7 +42,7 @@ public class GasThrusters : MonoBehaviour
             + m_PlayerCamera.transform.forward * m_PlayerInput.GetGasForw 
             + m_PlayerCamera.transform.up * m_PlayerInput.GetGasUp;
 
-        if(Input.GetKey(m_PlayerInput.Gas))
+        if(!m_PlayerMovement.IsOnGround)
         {
             Vector3 force = direction.normalized * m_GasForce * Time.deltaTime;
             float snapMultiplier = 1.05f - (Vector3.Dot(m_Rigidbody.velocity.normalized, force.normalized) + 1f) * 0.5f;
@@ -56,37 +56,9 @@ public class GasThrusters : MonoBehaviour
 
     private void HandleParticles()
     {
-
-        if(Input.GetKeyDown(m_PlayerInput.Gas))
+        if(!m_PlayerMovement.IsOnGround)
         {
-            if(Input.GetKey(m_PlayerInput.GasDirForw))
-            {
-                m_GasParticleForward.Play();
-            }
-            if(Input.GetKey(m_PlayerInput.GasDirBack))
-            {
-                m_GasParticleBackward.Play();
-            }
-            if(Input.GetKey(m_PlayerInput.GasDirRight))
-            {
-                m_GasParticleRight.Play();
-            }
-            if(Input.GetKey(m_PlayerInput.GasDirLeft))
-            {
-                m_GasParticleLeft.Play();
-            }
-            if(Input.GetKey(m_PlayerInput.GasDirUp))
-            {
-                m_GasParticleUp.Play();
-            }
-            if(Input.GetKey(m_PlayerInput.GasDirDown))
-            {
-                m_GasParticleDown.Play();
-            }
-        }
-        else if (Input.GetKey(m_PlayerInput.Gas))
-        {
-            if (Input.GetKeyDown(m_PlayerInput.GasDirForw))
+            if(Input.GetKeyDown(m_PlayerInput.GasDirForw))
             {
                 m_GasParticleForward.Play();
             }
@@ -104,18 +76,18 @@ public class GasThrusters : MonoBehaviour
                 m_GasParticleBackward.Stop();
             }
 
-            if (Input.GetKeyDown(m_PlayerInput.GasDirLeft))
+            if (Input.GetKeyDown(m_PlayerInput.GasDirRight))
             {
-                m_GasParticleLeft.Play();
+                m_GasParticleRight.Play();
             }
             else if (Input.GetKeyUp(m_PlayerInput.GasDirLeft))
             {
                 m_GasParticleLeft.Stop();
             }
 
-            if (Input.GetKeyDown(m_PlayerInput.GasDirRight))
+            if (Input.GetKeyDown(m_PlayerInput.GasDirLeft))
             {
-                m_GasParticleRight.Play();
+                m_GasParticleLeft.Play();
             }
             else if (Input.GetKeyUp(m_PlayerInput.GasDirRight))
             {
