@@ -73,7 +73,7 @@ public class GrappleHook : MonoBehaviour
             transform.position = m_TargetPosition + (m_GrappleHookNozzle.position - m_TargetPosition).normalized * Mathf.Sqrt(m_SqrGrappleMaxDistance) + localDiff;
 
             Vector3 newDir = Vector3.Cross(-Vector3.Cross(m_Rigidbody.velocity, m_GrappleHookNozzle.position - m_TargetPosition), m_GrappleHookNozzle.position - m_TargetPosition).normalized;
-            m_Rigidbody.velocity = newDir * m_Rigidbody.velocity.magnitude;
+            m_Rigidbody.velocity = newDir * m_Rigidbody.velocity.magnitude * (((Vector3.Dot(m_Rigidbody.velocity.normalized, newDir) + 1) * 0.5f));
         }
 
         m_SqrGrappleMaxDistance = Mathf.Min(m_SqrGrappleMaxDistance, sqrDistance);
